@@ -6,7 +6,7 @@ tagline:
 {% include JB/setup %}
 
 [Введение](/translate_problem_solving/pages/intro.html)
-..* Цели
+⋅⋅* Цели
 ..* Приступая к работе
 ..* Что такое информатика?
 ..* Обзор основ Python
