@@ -5,6 +5,7 @@ tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-## Добро пожаловать на страницу перевода книги "Problem Solving with Algorithms and Data Structures Using Python"
-
-
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
