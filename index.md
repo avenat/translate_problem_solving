@@ -6,7 +6,6 @@ tagline:
 {% include JB/setup %}
 
 [Введение](/translate_problem_solving/pages/intro.html)
- 
  * [Цели](/translate_problem_solving/pages/intro.html)
  * [Приступая к работе](/translate_problem_solving/pages/intro.html)
  * [Что такое информатика?](/translate_problem_solving/pages/intro.html)
