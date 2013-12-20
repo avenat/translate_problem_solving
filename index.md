@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Добро пожаловать,
-tagline: алгоритмы и структуры данных на языке программирования Python
+title: Алгоритмы на Python
+tagline: 
 ---
 {% include JB/setup %}
 
