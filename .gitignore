@@ -1,0 +1,7 @@
+*\.pyc
+*.pyc
+*.swp
+\.DS_Store
+*.db
+*.sqlite
+.env/

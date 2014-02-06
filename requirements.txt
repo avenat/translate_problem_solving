@@ -1,0 +1,5 @@
+django==1.6
+south
+gunicorn==18.0
+psycopg2==2.5.1
+django-bootstrap3==2.5.6
