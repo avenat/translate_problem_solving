@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gunicorn',
     'south',
+    'book',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,18 +55,6 @@ ROOT_URLCONF = 'interactivepython.urls'
 WSGI_APPLICATION = 'interactivepython.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddodc57f1pmq3r',
-        'USER': 'zsfvmuubirkqua',
-        'PASSWORD': 'jpd4JCtvTGrXE-UkCgx2U-rO0o',
-        'HOST': 'ec2-54-246-86-137.eu-west-1.compute.amazonaws.com'
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -127,3 +116,24 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from .local import *
+except IOError:
+    print 'Please add local.py'
+
+# Database
+# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+
+try:
+    DATABASES
+except NameError:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'ddodc57f1pmq3r',
+            'USER': 'zsfvmuubirkqua',
+            'PASSWORD': 'jpd4JCtvTGrXE-UkCgx2U-rO0o',
+            'HOST': 'ec2-54-246-86-137.eu-west-1.compute.amazonaws.com'
+        }
+    }
