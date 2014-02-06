@@ -18,9 +18,11 @@ DATABASES = {
 }
 ```
 
-App apply migrations
+and apply requirements and migrations
 
 ```
+virtualenv --no-site-packages .env
+pip install -r requirements.txt
 python manage.py syncdb
 python manage.py migrate
 ```
