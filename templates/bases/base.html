@@ -10,8 +10,29 @@
 {% bootstrap_css %} {% bootstrap_javascript %}
 <body>
 {% bootstrap_messages %}
-    {% block content %}
-    {% endblock %}
+<div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-7">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-7">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+<div class="row">
+  <div class="col-md-9 col-md-push-3">{% block content %}{% endblock %}</div>
+  <div class="col-md-3 col-md-pull-9">das</div>
+</div>
 </body>
 
 </html>

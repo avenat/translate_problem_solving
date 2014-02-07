@@ -2,4 +2,8 @@
 
 {% block content %}
 <h3>Hello World</h3>
+{% for item in book %}
+{{ item.title }}
+{{ item.body.rendered }}
+{% endfor %}
 {% endblock %}

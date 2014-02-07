@@ -42,6 +42,9 @@ INSTALLED_APPS = (
     'south',
     'book',
     'bootstrap3',
+    'markupfield',
+    'mptt',
+    'mptt_tree_editor',
 )
 
 MIDDLEWARE_CLASSES = (
