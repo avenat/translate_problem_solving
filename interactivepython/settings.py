@@ -24,6 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (BASE_DIR + '/templates/',)
+
 ALLOWED_HOSTS = []
 
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'south',
     'book',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
