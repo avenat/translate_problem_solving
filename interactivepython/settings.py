@@ -122,7 +122,7 @@ LOGGING = {
 
 try:
     from .local import *
-except IOError:
+except ImportError:
     print 'Please add local.py'
 
 # Database
