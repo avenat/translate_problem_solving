@@ -52,7 +52,7 @@ STATICFILES_DIRS = (
 # Application definition
 
 INSTALLED_APPS = (
-    'suit',
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,16 +78,17 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+)
+
 ROOT_URLCONF = 'interactivepython.urls'
 
 WSGI_APPLICATION = 'interactivepython.wsgi.application'
 
 
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
-
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-    'django.core.context_processors.request',
-)
 
 
 # Internationalization

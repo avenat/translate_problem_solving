@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^book/', include('book.urls')),
     url(r'^$', index, name='index'),
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
 )
 
 urlpatterns += staticfiles_urlpatterns()
