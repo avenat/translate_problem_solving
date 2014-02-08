@@ -1,0 +1,20 @@
+{% extends "bases/base.html" %}
+
+
+{% block content %}
+<ol class="breadcrumb">
+{% for parent in book.get_ancestors %}
+<li><a href="{% url 'read' parent.slug %}">{{ parent.title }}</a></li>
+{% endfor %}
+<li class="active">{{ book.title }}</li>
+
+</ol>
+<div class="panel panel-success">
+      <div class="panel-heading">
+          <h3 class="panel-title">{{ book.title }}</h3>
+      </div>
+      <div class="panel-body">
+          {{ book.body }}
+      </div>
+    </div>
+{% endblock %}

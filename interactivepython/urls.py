@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
+from .views import index
 
 from django.contrib import admin
 admin.autodiscover()
@@ -11,6 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^book/', include('book.urls')),
+    url(r'^$', index, name='index'),
 )
 
 urlpatterns += patterns('',  

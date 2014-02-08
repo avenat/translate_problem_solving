@@ -29,10 +29,12 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-    <div class="col-md-3">{% block left %} {% endblock %}</div>
-    <div class="col-md-8">{% block content %} {% endblock %}</div>
-    <div class="col-md-1">{% block right %} {% endblock %}</div>
+<div class="jumbotron">
+  <p>Добро пожаловать в учебник "Интерактивный Python"</p>
+  <p><a href="{% url 'book' %}" class="btn btn-primary btn-lg" role="button">Читать</a></p>
+</div>
 </div>
 </body>
 
 </html>
+
