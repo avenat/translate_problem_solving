@@ -1,4 +1,5 @@
 {% extends "bases/base.html" %}
+{% load mptt_tags %}
 
 
 {% block content %}
@@ -17,4 +18,20 @@
           {{ book.body }}
       </div>
     </div>
+{% endblock %}
+
+{% block left %}
+
+<ul class="root">
+    {% recursetree all %}
+        <li>
+        <a href="{% url 'read' node.slug %}">{{ node.title }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>
 {% endblock %}

@@ -10,6 +10,7 @@ def index(request):
 
 def read(request, slug):
     book = Book.objects.get(slug=slug)
-    context = {'book': book}
+    book_all = Book.objects.all()
+    context = {'book': book, 'all': book_all}
     return render(request, 'book/read.html', context)
 
