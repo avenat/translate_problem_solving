@@ -1,6 +1,6 @@
 {% extends "bases/base.html" %}
 {% load mptt_tags %}
-
+{% load markdown %}
 
 {% block content %}
 <ol class="breadcrumb">
@@ -15,7 +15,7 @@
           <h3 class="panel-title">{{ book.title }}</h3>
       </div>
       <div class="panel-body">
-          {{ book.body }}
+          {{ book.body|safe|markdown2 }}
       </div>
     </div>
 {% endblock %}

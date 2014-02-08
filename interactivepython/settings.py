@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+def rel(*x):
+    return os.path.normpath(
+        os.path.join(os.path.abspath(os.path.dirname(__file__)), *x),
+    )
+
+PROJECT_ROOT = rel('..')
+
+root = lambda *x: os.path.abspath(
+    os.path.join(os.path.abspath(PROJECT_ROOT), *x))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -28,6 +37,17 @@ TEMPLATE_DIRS = (BASE_DIR + '/templates/',)
 
 ALLOWED_HOSTS = []
 
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    root('static/base'),
+)
 
 # Application definition
 
@@ -45,6 +65,7 @@ INSTALLED_APPS = (
     'markupfield',
     'mptt',
     'mptt_tree_editor',
+    'pagedown',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -122,7 +143,7 @@ LOGGING = {
         },
     }
 }
-
+MARKDOWN_EDITOR_SKIN = 'simple'
 try:
     from .local import *
 except ImportError:
