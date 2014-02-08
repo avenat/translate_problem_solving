@@ -67,6 +67,8 @@ INSTALLED_APPS = (
     'mptt',
     'mptt_tree_editor',
     'epiceditor',
+    'filer',
+    'easy_thumbnails',
 )
 
 MIDDLEWARE_CLASSES = (
