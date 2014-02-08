@@ -2,12 +2,12 @@ from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
 from .models import Book
 from mptt_tree_editor.admin import TreeEditor
-from pagedown.widgets import AdminPagedownWidget
 from django.db import models
+from epiceditor.widgets import AdminEpicEditorWidget
 
 class BookAdmin(TreeEditor):
     formfield_overrides = {
-            models.TextField: {'widget': AdminPagedownWidget },
+            models.TextField: {'widget': AdminEpicEditorWidget },
     }
 
 admin.site.register(Book, BookAdmin)

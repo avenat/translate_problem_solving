@@ -52,6 +52,7 @@ STATICFILES_DIRS = (
 # Application definition
 
 INSTALLED_APPS = (
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,7 +66,7 @@ INSTALLED_APPS = (
     'markupfield',
     'mptt',
     'mptt_tree_editor',
-    'pagedown',
+    'epiceditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,6 +82,12 @@ ROOT_URLCONF = 'interactivepython.urls'
 
 WSGI_APPLICATION = 'interactivepython.wsgi.application'
 
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
 
 
 # Internationalization
