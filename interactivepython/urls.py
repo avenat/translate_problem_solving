@@ -14,7 +14,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^book/', include('book.urls')),
     url(r'^$', index, name='index'),
-    url('^markdown/', include( 'django_markdown.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
