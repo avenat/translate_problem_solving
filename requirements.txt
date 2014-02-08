@@ -8,5 +8,5 @@ django-mptt==0.6.0
 django-mptt-tree-editor==0.1.1
 pygments==1.6
 markdown2==2.2.0
-django-suit==0.2.5
 django-epiceditor==0.2.2
+bootstrap_admin==0.3.0
