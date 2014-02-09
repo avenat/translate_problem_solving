@@ -11,5 +11,6 @@ register = template.Library()
 def markdown2(value):
     return mark_safe(markdown(force_unicode(value),
                      extras=['wiki-tables',
+                             'pyshell',
                              'fenced-code-blocks'],
                      safe_mode=True))
