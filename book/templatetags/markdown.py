@@ -9,8 +9,7 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def markdown2(value):
-    return mark_safe(markdown(force_unicode(value),
+    return markdown(force_unicode(value),
                      extras=['wiki-tables',
                              'pyshell',
-                             'fenced-code-blocks'],
-                     safe_mode=True))
+                             'fenced-code-blocks'])
