@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load bootstrap3 %}
+{% load mathjax %}
 <html>
 <head>
 <title></title>
@@ -8,7 +9,9 @@
 <link rel="stylesheet" href="{% static "css/base.css" %}" type="text/css" media="screen">
 <link rel="stylesheet" href="{% static "css/syntax.css" %}" type="text/css" media="screen">
 </head>
-{% bootstrap_css %} {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% mathjax_scripts %}
 <body>
 {% bootstrap_messages %}
 <nav class="navbar navbar-default" role="navigation">

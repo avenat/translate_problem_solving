@@ -69,6 +69,7 @@ INSTALLED_APPS = (
     'epiceditor',
     'filer',
     'easy_thumbnails',
+    'django_mathjax',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,6 +82,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'interactivepython.urls'
+
+
+MATHJAX_ENABLED=True
 
 WSGI_APPLICATION = 'interactivepython.wsgi.application'
 
