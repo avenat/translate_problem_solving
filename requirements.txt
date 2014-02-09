@@ -11,4 +11,3 @@ markdown2==2.2.0
 django-suit==0.2.5
 django-epiceditor==0.2.2
 django-filer==0.9.4
-django-mathjax==0.0.2
