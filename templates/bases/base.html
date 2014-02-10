@@ -13,6 +13,8 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <body>
 {% bootstrap_messages %}
+
+
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,6 +33,9 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="page-header">
+    <h1><small>{% block title %} {% endblock %}</small></h1>
+</div>
 <div class="row">
     <div class="col-md-3">{% block left %} {% endblock %}</div>
     <div class="col-md-8">{% block content %} {% endblock %}</div>

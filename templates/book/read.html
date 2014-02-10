@@ -3,36 +3,34 @@
 {% load markdown %}
 
 {% block content %}
-<ol class="breadcrumb">
-{% for parent in book.get_ancestors %}
-<li><a href="{% url 'read' parent.slug %}">{{ parent.title }}</a></li>
-{% endfor %}
-<li class="active">{{ book.title }}</li>
 
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+    {% for parent in book.get_ancestors %}
+    <li><a href="{% url 'read' parent.slug %}">{{ parent.title }}</a></li>
+    {% endfor %}
+    <li class="active">{{ book.title }}</li>
 </ol>
-<div class="panel panel-success">
-      <div class="panel-heading">
-          <h3 class="panel-title">{{ book.title }}</h3>
-      </div>
-      <div class="panel-body">
-          {{ book.body|safe|markdown2 }}
-      </div>
-    </div>
+<!-- /Breadcrumb -->
+
+<!-- Content -->
+{{ book.body|safe|markdown2 }}
+<!-- EndContent -->
+
 {% endblock %}
 
 {% block left %}
-
-<h4>Оглавление</h4>
+<h4>{% block title %} {{ book.title }} {% endblock %}</h4>
 <ul class="root">
     {% recursetree all %}
-        <li>
-        <a href="{% url 'read' node.slug %}">{{ node.title }}</a>
-            {% if not node.is_leaf_node %}
-                <ul class="children">
-                    {{ children }}
-                </ul>
-            {% endif %}
-        </li>
+    <li>
+    <a href="{% url 'read' node.slug %}">{{ node.title }}</a>
+    {% if not node.is_leaf_node %}
+    <ul class="children">
+        {{ children }}
+    </ul>
+    {% endif %}
+    </li>
     {% endrecursetree %}
 </ul>
 {% endblock %}
