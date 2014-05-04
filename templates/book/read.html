@@ -14,7 +14,7 @@
 <!-- /Breadcrumb -->
 
 <!-- Content -->
-{{ book.body|safe|markdown2 }}
+{{ book.body|markdown2|safe }}
 <!-- EndContent -->
 
 {% endblock %}
